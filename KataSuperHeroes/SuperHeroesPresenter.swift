@@ -11,7 +11,42 @@ import BothamUI
 
 class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
 
-    func viewDidLoad() { }
-
+    weak var ui: SuperHeroesView?
+    let getSuperHeroes: GetSuperHeroes
+    
+    init(ui: SuperHeroesView, getSuperHeroes: GetSuperHeroes) {
+        
+        self.ui = ui
+        self.getSuperHeroes = getSuperHeroes
+    }
+    
+    func viewDidLoad() {
+        
+        self.ui?.showLoader()
+        
+        self.getSuperHeroes.execute { (superHeroes) in
+        
+            self.ui?.hideLoader()
+            
+            if superHeroes.isEmpty {
+                
+                self.ui?.showEmptyCase()
+            }
+            else {
+                
+                self.ui?.showSuperHeroes(superHeroes: superHeroes)
+            }
+        }
+    }
+    
     func itemWasTapped(_ item: SuperHero) { }
+    
+}
+
+protocol SuperHeroesView: BothamLoadingUI {
+
+    func showEmptyCase()
+    
+    func showSuperHeroes(superHeroes: [SuperHero])
+    
 }

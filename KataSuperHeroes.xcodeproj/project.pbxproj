@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2EF423110536FA1BE9F3D026 /* Pods_KataSuperHeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BB6D7EC1A35D967ACA058D /* Pods_KataSuperHeroesTests.framework */; };
+		A1E842A41E7D7EF800A74FBF /* GetSuperHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E842A31E7D7EF800A74FBF /* GetSuperHeroes.swift */; };
+		A1E842A61E7D7F8600A74FBF /* SuperHeroesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E842A51E7D7F8600A74FBF /* SuperHeroesRepository.swift */; };
 		EB8705FF1C46508E00B66C19 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8705FE1C46508E00B66C19 /* XCTestCase.swift */; };
 		EB8706011C46510300B66C19 /* KIFTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706001C46510300B66C19 /* KIFTestActor.swift */; };
 		EB8706031C46513E00B66C19 /* SuperHeroesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */; };
@@ -47,6 +49,8 @@
 		7FC32F3D31A7392656DF9EC8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91340F19D0D930E9F02F1DEA /* Pods-KataSuperHeroesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		981F37EA85F06E461D7BE716 /* Pods-KataSuperHeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests.release.xcconfig"; sourceTree = "<group>"; };
+		A1E842A31E7D7EF800A74FBF /* GetSuperHeroes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSuperHeroes.swift; sourceTree = "<group>"; };
+		A1E842A51E7D7F8600A74FBF /* SuperHeroesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesRepository.swift; sourceTree = "<group>"; };
 		EB8705FE1C46508E00B66C19 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		EB8706001C46510300B66C19 /* KIFTestActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFTestActor.swift; sourceTree = "<group>"; };
 		EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewControllerTests.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		EBDE9B761C4518A600E4B4C2 /* Super Heroes */ = {
 			isa = PBXGroup;
 			children = (
+				A1E842A31E7D7EF800A74FBF /* GetSuperHeroes.swift */,
 				EBDE9B7F1C451CA600E4B4C2 /* Model */,
 				EBDE9B7D1C451C3B00E4B4C2 /* View */,
 			);
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				EBDE9B881C453AEA00E4B4C2 /* SuperHero.swift */,
+				A1E842A51E7D7F8600A74FBF /* SuperHeroesRepository.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE6DE411E71B258007900A4 /* SuperHeroesPresenter.swift in Sources */,
+				A1E842A41E7D7EF800A74FBF /* GetSuperHeroes.swift in Sources */,
 				EBDE9B8E1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift in Sources */,
 				EBC230771C45016A007D5068 /* SuperHeroesViewController.swift in Sources */,
 				EBE6DE431E71B2B2007900A4 /* SuperHeroDetailPresenter.swift in Sources */,
@@ -458,6 +465,7 @@
 				EBC230751C45016A007D5068 /* AppDelegate.swift in Sources */,
 				EBDE9B791C4518EE00E4B4C2 /* ServiceLocator.swift in Sources */,
 				EBDE9B891C453AEA00E4B4C2 /* SuperHero.swift in Sources */,
+				A1E842A61E7D7F8600A74FBF /* SuperHeroesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

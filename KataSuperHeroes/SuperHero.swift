@@ -12,7 +12,7 @@ struct SuperHero {
 
     let name: String
     let photo: URL?
-    let isAvenger: Bool
+    let isAvenger = false
     let description: String
 
 }

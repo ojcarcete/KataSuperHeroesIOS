@@ -19,14 +19,21 @@ class ServiceLocator {
     }
 
     func provideSuperHeroesViewController() -> UIViewController {
+        let superHeroesRepository = SuperHeroesRepository()
+        let getSuperHeroes = GetSuperHeroes(superHeroesRepository: superHeroesRepository)
+        
         let superHeroesViewController: SuperHeroesViewController =
         storyBoard.instantiateViewController("SuperHeroesViewController")
-        let presenter = SuperHeroesPresenter()
+        
         let dataSource = provideSuperHeroesDataSource()
-        superHeroesViewController.presenter = presenter
         superHeroesViewController.dataSource = dataSource
+        
+        let presenter = SuperHeroesPresenter(ui: superHeroesViewController, getSuperHeroes: getSuperHeroes)
+        superHeroesViewController.presenter = presenter
+        
         superHeroesViewController.delegate =
             BothamTableViewNavigationDelegate(dataSource: dataSource, presenter: presenter)
+    
         return superHeroesViewController
     }
 
