@@ -10,6 +10,7 @@ import Foundation
 
 struct SuperHero {
 
+    let superHeroId: String
     let name: String
     let photo: URL?
     let isAvenger = false

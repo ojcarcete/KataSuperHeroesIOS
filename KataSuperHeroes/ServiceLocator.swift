@@ -12,6 +12,8 @@ import BothamUI
 
 class ServiceLocator {
 
+    let superHeroesRepository = SuperHeroesRepository()
+    
     func provideRootViewController() -> UIViewController {
         let navigationController: UINavigationController = storyBoard.initialViewController()
         navigationController.viewControllers = [provideSuperHeroesViewController()]
@@ -19,8 +21,7 @@ class ServiceLocator {
     }
 
     func provideSuperHeroesViewController() -> UIViewController {
-        let superHeroesRepository = SuperHeroesRepository()
-        let getSuperHeroes = GetSuperHeroes(superHeroesRepository: superHeroesRepository)
+        let getSuperHeroes = GetSuperHeroes(superHeroesRepository: self.superHeroesRepository)
         
         let superHeroesViewController: SuperHeroesViewController =
         storyBoard.instantiateViewController("SuperHeroesViewController")
@@ -37,10 +38,12 @@ class ServiceLocator {
         return superHeroesViewController
     }
 
-    func provideSuperHeroDetailViewController(_ superHeroName: String) -> UIViewController {
+    func provideSuperHeroDetailViewController(_ superHeroId: String) -> UIViewController {
+        let getSuperHero = GetSuperHero(superHeroesRepository: superHeroesRepository)
+        
         let viewController: SuperHeroDetailViewController =
         storyBoard.instantiateViewController("SuperHeroDetailViewController")
-        viewController.presenter = SuperHeroDetailPresenter()
+        viewController.presenter = SuperHeroDetailPresenter(ui: viewController, superHeroId: superHeroId, getSuperHero: getSuperHero)
         return viewController
     }
 

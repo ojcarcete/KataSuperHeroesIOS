@@ -9,8 +9,6 @@
 import Foundation
 import MarvelAPIClient
 
-let fakeSuperHero = SuperHero(name: "", photo: nil, description: "")
-
 struct SuperHeroesRepository {
     
     init() {
@@ -22,8 +20,7 @@ struct SuperHeroesRepository {
     
     func getAll(completion: @escaping SuperHeroesResult) {
         
-        let charactersAPIClient = MarvelAPIClient.charactersAPIClient
-        charactersAPIClient.getAll(offset: 0, limit: 100) { response in
+        MarvelAPIClient.charactersAPIClient.getAll(offset: 0, limit: 100) { response in
             
             var superHeroes = [SuperHero]()
             
@@ -42,13 +39,32 @@ struct SuperHeroesRepository {
         }
     }
     
+    func get(id: String, completion: @escaping SuperHeroResult) {
+        
+        MarvelAPIClient.charactersAPIClient.getById(id: id) { response in
+            
+            var superHero: SuperHero? = nil
+            
+            if let character = response.value {
+                
+                superHero = self.superHeroFromCharacter(character: character)
+            }
+            
+            DispatchQueue.main.async {
+                
+                completion(superHero)
+            }
+        }
+    }
+    
     private func superHeroFromCharacter(character: CharacterDTO) -> SuperHero {
         
+        let superHeroId = character.id
         let name = character.name ?? ""
         let photoUrl = character.thumbnail?.URL(variant: .fullSize) as URL?
         let description = character.description ?? ""
         
-        return SuperHero(name: name, photo: photoUrl, description: description)
+        return SuperHero(superHeroId: superHeroId, name: name, photo: photoUrl, description: description)
     }
     
 }

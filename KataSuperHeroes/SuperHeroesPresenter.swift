@@ -39,7 +39,11 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
         }
     }
     
-    func itemWasTapped(_ item: SuperHero) { }
+    func itemWasTapped(_ item: SuperHero) {
+    
+        let superHeroDetailViewController = ServiceLocator().provideSuperHeroDetailViewController(item.superHeroId) as! SuperHeroDetailViewController
+        self.ui?.openSuperHeroDetailScreen(superHeroDetailViewController)        
+    }
     
 }
 
@@ -49,4 +53,6 @@ protocol SuperHeroesView: BothamLoadingUI {
     
     func showSuperHeroes(superHeroes: [SuperHero])
     
+    func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController)
+        
 }

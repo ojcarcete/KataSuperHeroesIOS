@@ -28,10 +28,6 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
         super.viewDidLoad()
     }
 
-    func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController) {
-        navigationController?.push(viewController: superHeroDetailViewController)
-    }
-
     fileprivate func configureNavigationBarBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
@@ -48,6 +44,11 @@ extension SuperHeroesViewController: SuperHeroesView {
         
         self.dataSource.items = superHeroes
         self.tableView.reloadData()
+    }
+    
+    func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController) {
+        
+        self.navigationController?.push(viewController: superHeroDetailViewController)
     }
     
 }
