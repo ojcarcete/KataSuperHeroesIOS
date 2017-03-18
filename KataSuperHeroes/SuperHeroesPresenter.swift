@@ -24,17 +24,20 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
         
         self.ui?.showLoader()
         
-        self.getSuperHeroes.execute { (superHeroes) in
+        self.getSuperHeroes.execute { (superHeroesResult) in
         
             self.ui?.hideLoader()
             
-            if superHeroes.isEmpty {
+            if let superHeroes = superHeroesResult.value {
                 
-                self.ui?.showEmptyCase()
-            }
-            else {
-                
-                self.ui?.showSuperHeroes(superHeroes: superHeroes)
+                if superHeroes.isEmpty {
+                    
+                    self.ui?.showEmptyCase()
+                }
+                else {
+                    
+                    self.ui?.showSuperHeroes(superHeroes: superHeroes)
+                }
             }
         }
     }

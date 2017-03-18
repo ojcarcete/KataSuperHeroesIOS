@@ -18,23 +18,37 @@ struct SuperHeroesRepository {
             privateKey: "d3fa0b1bad53d48b8bac7b9d4a02a860d24caca0")
     }
     
-    func getAll(completion: @escaping SuperHeroesResult) {
+    func getAll(completion: @escaping SuperHeroesResponse) {
         
         MarvelAPIClient.charactersAPIClient.getAll(offset: 0, limit: 100) { response in
             
-            var superHeroes = [SuperHero]()
-            
             if let characters = response.value?.characters {
                 
-                superHeroes = characters.map({ character in
+                let superHeroes = characters.map({ character in
                     
                     self.superHeroFromCharacter(character: character)
                 })
+                
+                DispatchQueue.main.async {
+                    
+                    completion(SuperHeroesResult(value: superHeroes))
+                }
             }
+            else {
                 
-            DispatchQueue.main.async {
+                let error: SuperHeroError
                 
-                completion(superHeroes)
+                switch response.error! {
+                    case .httpResponseError(statusCode: let statusCode, body: _) where statusCode == 403:
+                        error = .invalidSession
+                    default:
+                        error = .unknownError
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    completion(SuperHeroesResult(error: error))
+                }
             }
         }
     }

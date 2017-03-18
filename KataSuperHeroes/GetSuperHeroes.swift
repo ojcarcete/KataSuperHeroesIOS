@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import Result
 
-typealias SuperHeroesResult = (_ superHeroes: [SuperHero]) -> ()
+typealias SuperHeroesResult = Result<[SuperHero], SuperHeroError>
+typealias SuperHeroesResponse = (_ superHeroesResult: SuperHeroesResult) -> ()
 
 struct GetSuperHeroes {
     
     internal let superHeroesRepository: SuperHeroesRepository
     
-    func execute(completion: @escaping SuperHeroesResult) {
+    func execute(completion: @escaping SuperHeroesResponse) {
 
         self.superHeroesRepository.getAll(completion: completion)
     }
