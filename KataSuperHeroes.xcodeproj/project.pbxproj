@@ -10,6 +10,7 @@
 		2EF423110536FA1BE9F3D026 /* Pods_KataSuperHeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BB6D7EC1A35D967ACA058D /* Pods_KataSuperHeroesTests.framework */; };
 		A14E9F041E7D9D8C009BF6A6 /* GetSuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E9F031E7D9D8C009BF6A6 /* GetSuperHero.swift */; };
 		A14E9F061E7DA2D1009BF6A6 /* SuperHeroError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E9F051E7DA2D1009BF6A6 /* SuperHeroError.swift */; };
+		A14E9F081E7DA7C9009BF6A6 /* RichSuperHeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E9F071E7DA7C9009BF6A6 /* RichSuperHeroModel.swift */; };
 		A1E842A41E7D7EF800A74FBF /* GetSuperHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E842A31E7D7EF800A74FBF /* GetSuperHeroes.swift */; };
 		A1E842A61E7D7F8600A74FBF /* SuperHeroesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E842A51E7D7F8600A74FBF /* SuperHeroesRepository.swift */; };
 		EB8705FF1C46508E00B66C19 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8705FE1C46508E00B66C19 /* XCTestCase.swift */; };
@@ -53,6 +54,7 @@
 		981F37EA85F06E461D7BE716 /* Pods-KataSuperHeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests.release.xcconfig"; sourceTree = "<group>"; };
 		A14E9F031E7D9D8C009BF6A6 /* GetSuperHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSuperHero.swift; sourceTree = "<group>"; };
 		A14E9F051E7DA2D1009BF6A6 /* SuperHeroError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroError.swift; sourceTree = "<group>"; };
+		A14E9F071E7DA7C9009BF6A6 /* RichSuperHeroModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichSuperHeroModel.swift; sourceTree = "<group>"; };
 		A1E842A31E7D7EF800A74FBF /* GetSuperHeroes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSuperHeroes.swift; sourceTree = "<group>"; };
 		A1E842A51E7D7F8600A74FBF /* SuperHeroesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesRepository.swift; sourceTree = "<group>"; };
 		EB8705FE1C46508E00B66C19 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				EBDE9B881C453AEA00E4B4C2 /* SuperHero.swift */,
 				A1E842A51E7D7F8600A74FBF /* SuperHeroesRepository.swift */,
 				A14E9F051E7DA2D1009BF6A6 /* SuperHeroError.swift */,
+				A14E9F071E7DA7C9009BF6A6 /* RichSuperHeroModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				A1E842A41E7D7EF800A74FBF /* GetSuperHeroes.swift in Sources */,
 				A14E9F041E7D9D8C009BF6A6 /* GetSuperHero.swift in Sources */,
 				EBDE9B8E1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift in Sources */,
+				A14E9F081E7DA7C9009BF6A6 /* RichSuperHeroModel.swift in Sources */,
 				EBC230771C45016A007D5068 /* SuperHeroesViewController.swift in Sources */,
 				EBE6DE431E71B2B2007900A4 /* SuperHeroDetailPresenter.swift in Sources */,
 				EBDE9B871C4539B800E4B4C2 /* KataSuperHeroesViewController.swift in Sources */,

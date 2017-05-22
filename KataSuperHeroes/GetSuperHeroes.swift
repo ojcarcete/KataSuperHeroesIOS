@@ -14,11 +14,11 @@ typealias SuperHeroesResponse = (_ superHeroesResult: SuperHeroesResult) -> ()
 
 struct GetSuperHeroes {
     
-    internal let superHeroesRepository: SuperHeroesRepository
+    internal let richSuperHeroModel: RichSuperHeroModel
     
     func execute(completion: @escaping SuperHeroesResponse) {
 
-        self.superHeroesRepository.getAll(completion: completion)
+        self.richSuperHeroModel.getAll(completion: completion)
     }
     
 }

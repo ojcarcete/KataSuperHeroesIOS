@@ -13,7 +13,12 @@ struct SuperHero {
     let superHeroId: String
     let name: String
     let photo: URL?
-    let isAvenger = false
+    let isAvenger: Bool
     let description: String
 
+    func asAvenger(isAvenger: Bool) -> SuperHero {
+        
+        return SuperHero(superHeroId: self.superHeroId, name: self.name, photo: self.photo, isAvenger: isAvenger, description: self.description)
+    }
+    
 }

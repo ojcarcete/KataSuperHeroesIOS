@@ -78,7 +78,7 @@ struct SuperHeroesRepository {
         let photoUrl = character.thumbnail?.URL(variant: .fullSize) as URL?
         let description = character.description ?? ""
         
-        return SuperHero(superHeroId: superHeroId, name: name, photo: photoUrl, description: description)
+        return SuperHero(superHeroId: superHeroId, name: name, photo: photoUrl, isAvenger: false, description: description)
     }
     
 }
